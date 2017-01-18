@@ -108,6 +108,7 @@ fi
 
 # Ubuntu environment-module
 
+# KAUST modules
 export MANPATH=:
 export KAUST_DISTRO=ub1204
 export KAUST_ARCH=x86_64
@@ -119,19 +120,20 @@ export KAUST_MODULES_ROOT=/opt/share/modules
 export LIBGL_ALWAYS_INDIRECT=1
 
 
-
-
 export MACHINES="almaha bashiq buraq condor jasmine oqab raed shihab thana";
 
 
-####
-
-
 export PATH=$PATH:$HOME/shells
+
+# Bash history
 export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
 export HISTSIZE=10000
 export HISTFILESIZE=30000
 shopt -s histappend
 export PROMPT_COMMAND='history -a'
 
-export EDITOR=emacs
+# Editors
+alias emacs="emacs -nw";
+alias em="emacs -nw"
+export EDITOR="emacs -nw"
+
