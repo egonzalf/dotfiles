@@ -122,7 +122,7 @@ export LIBGL_ALWAYS_INDIRECT=1
 
 export MACHINES="almaha bashiq buraq condor jasmine oqab raed shihab thana";
 
-
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH=$PATH:$HOME/shells
 
 # Bash history
