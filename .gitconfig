@@ -1,0 +1,9 @@
+[user]
+	email = eduardo.gonzalezfisher@kaust.edu.sa
+	name = Eduardo Gonzalez Fisher
+[credential]
+	helper = cache --timeout=3600
+[core]
+	editor = emacs -nw
+[push]
+	default = simple
