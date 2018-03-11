@@ -358,7 +358,7 @@ Indenter=cmake
 Mimetypes=text/x-cmake;
 Priority=2
 Section=Other
-Variables=kate: block-selection true; indent-mode cmake; indent-pasted-text false; indent-width 5; line-numbers true; syntax CMake;
+Variables=kate: block-selection true; indent-mode cmake; indent-pasted-text false; indent-width 4; line-numbers true; show-tabs true; syntax CMake; tab-width 5;
 Wildcards=CMakeLists.txt;*.cmake;*.cmake.in;
 
 [CSS]
