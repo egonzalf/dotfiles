@@ -115,9 +115,6 @@ export KAUST_ARCH=x86_64
 export KAUST_APPS_ROOT=/opt/share
 export KAUST_MODULES_ROOT=/opt/share/modules
 
-#export MODULEPATH=/opt/share/modules/applications:/opt/share/modules/compilers:/opt/share/modules/libs:/opt/share/modules/sets
-
-export LIBGL_ALWAYS_INDIRECT=1
 
 
 export MACHINES="almaha bashiq buraq condor jasmine oqab raed shihab thana";
