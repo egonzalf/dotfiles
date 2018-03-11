@@ -1,13 +1,29 @@
 [Desktop Entry]
-DefaultProfile=Trans.profile
+DefaultProfile=transparent.profile
 
 [Favorite Profiles]
-Favorites=White.profile,Shell.profile,Trans.profile
+Favorites=black.profile,greenblack.profile,white.profile,transparent.profile
+
+[FileDialogSize]
+Height 2160=635
+Width 3840=1585
+
+[KFileDialog Settings]
+Recent Files[$e]=file:///tmp/cmake-diff.html,file:///tmp/cmake-diff.html
+Recent URLs[$e]=file:///tmp/
 
 [MainWindow]
+Height 0=2111
 Height 1080=762
-Height 2160=2051
-State=AAAA/wAAAAD9AAAAAAAAB3gAAAfZAAAABAAAAAQAAAAIAAAACPwAAAAA
+Height 2160=1343
+State=AAAA/wAAAAD9AAAAAAAAB3gAAAUVAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
+Width 0=1912
 Width 1920=817
 Width 3840=1912
+Window-Maximized 2160x3840=false
+
+[Profile Shortcuts]
+Ctrl+?=White.profile
+Ctrl+@=Trans.profile
+Ctrl+~=Shell.profile
