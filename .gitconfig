@@ -5,14 +5,18 @@
 	helper = cache --timeout=3600
 [core]
 	editor = emacs -nw
+	excludesFile = /home/gonzalea/.gitignore
 [push]
 	default = simple
 [alias]
-	st = status
+    st = status
+    history = log --graph --decorate --oneline
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[http]
-	proxy = http://blog.eddie.cl:3128
+#[http]
+#	proxy = http://blog.eddie.cl:3128
+[gui]
+	editor = kwrite
