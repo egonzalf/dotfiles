@@ -106,21 +106,34 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+### Colors
+red=$'\e[1;31m'
+grn=$'\e[1;32m'
+ylw=$'\e[1;33m'
+blu=$'\e[1;34m'
+mag=$'\e[1;35m'
+cyn=$'\e[1;36m'
+wht=$'\e[1;37m'
+nocolor=$'\e[0m'
+
+
+
+
+#########################
 # Ubuntu environment-module
+shopt -q login_shell || source /etc/profile.d/modules.sh
+shopt -q login_shell || source /etc/profile.d/modules-it.sh
+shopt -q login_shell || source /etc/profile.d/modules-ecrc.sh
+export MODULEPATH=$(echo $MODULEPATH|tr ':' '\n'|sort|uniq|tr '\n' ':')
 
-# KAUST modules
-export MANPATH=:
-export KAUST_DISTRO=ub1204
-export KAUST_ARCH=x86_64
-export KAUST_APPS_ROOT=/opt/share
-export KAUST_MODULES_ROOT=/opt/share/modules
+# VTE fix in ubuntu
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
 
-
-
-export MACHINES="almaha bashiq buraq condor jasmine oqab raed shihab thana";
-
-
-export PATH=$PATH:$HOME/shells
+export LIBGL_ALWAYS_INDIRECT=1
+export MACHINES="albatross almaha bashiq buraq condor flamingo jasmine oqab raed shihab thana";
+export PATH=$PATH:$HOME/shells:$HOME/devel/argbash-2.5.1/bin
 
 # Bash history
 export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
@@ -130,7 +143,29 @@ shopt -s histappend
 export PROMPT_COMMAND='history -a'
 
 # Editors
-alias emacs="emacs -nw";
-alias em="emacs -nw"
-export EDITOR="emacs -nw"
+alias emacs="emacs24-nox";
+alias em="emacs24-nox"
+export EDITOR="emacs24-nox"
 
+alias gitka="gitk --all"
+alias vmake="make VERBOSE=1"
+alias fmake="make -j 20 -l 24"
+alias bfg="java -jar ~/Downloads/bfg-1.12.16.jar"
+export LANGUAGE="en_GB.UTF-8"
+
+# Konsole appareance
+# konsoleprofile colors=XXXX
+#alias swprofile='printf "\033]50;%s\a"'
+function appearance {
+	if [ -n $1 ]; then
+		konsoleprofile colors=$1
+	fi
+}
+
+
+alias resetlang="export LC_ALL=C"
+
+
+
+# use runpath
+export LDFLAGS="$LDFLAGS -Wl,--enable-new-dtags"
