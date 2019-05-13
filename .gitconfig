@@ -11,6 +11,7 @@
 [alias]
     st = status
     history = log --graph --decorate --oneline
+    ls = ls-tree -r HEAD --name-only
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f

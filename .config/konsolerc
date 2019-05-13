@@ -1,8 +1,8 @@
 [Desktop Entry]
-DefaultProfile=transparent.profile
+DefaultProfile=black.profile
 
 [Favorite Profiles]
-Favorites=black.profile,greenblack.profile,white.profile,transparent.profile
+Favorites=black.profile,white.profile,transparent.profile,greenblack.profile
 
 [FileDialogSize]
 Height 2160=635
