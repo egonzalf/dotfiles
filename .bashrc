@@ -137,7 +137,7 @@ export PATH=$PATH:$HOME/shells:$HOME/devel/argbash-2.5.1/bin
 
 # Bash history
 export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
-export HISTSIZE=10000
+export HISTSIZE=30000
 export HISTFILESIZE=30000
 shopt -s histappend
 export PROMPT_COMMAND='history -a'
@@ -165,7 +165,17 @@ function appearance {
 
 alias resetlang="export LC_ALL=C"
 
+alias rdocker="docker --tlsverify --tlscacert=/home/gonzalea/.docker/ca.docker-host.pem --tlscert=/home/gonzalea/.docker/cert.docker-host.pem --tlskey=/home/gonzalea/.docker/key.docker-host.pem   -H=docker-host:3389 "
 
-
+alias myindent="indent -linux -i4 -di16 -l100 -ip4 -hnl -nprs -npcs "
+alias ssh-copy-id="ssh-copy-id  -i ~/.ssh/id_rsa.pub"
 # use runpath
 export LDFLAGS="$LDFLAGS -Wl,--enable-new-dtags"
+
+
+
+if [ "a$KONSOLE_PROFILE_NAME" == "atransquake" ]
+then
+    resetlang
+fi
+source <(kubectl completion bash)
