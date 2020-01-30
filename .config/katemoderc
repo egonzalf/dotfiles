@@ -645,7 +645,7 @@ Mimetypes=
 Priority=0
 Section=Other
 Variables=kate:\s
-Wildcards=Dockerfile;
+Wildcards=Dockerfile;*.dockerfile;
 
 [Doxygen]
 Highlighting=Doxygen
@@ -942,7 +942,7 @@ Mimetypes=
 Priority=0
 Section=Sources
 Variables=kate:\s
-Wildcards=*.groovy;
+Wildcards=*.groovy;*.Jenkinsfile;Jenkinsfile;
 
 [HTML]
 Highlighting=HTML

@@ -122,7 +122,7 @@ nocolor=$'\e[0m'
 #########################
 # Ubuntu environment-module
 shopt -q login_shell || source /etc/profile.d/modules.sh
-shopt -q login_shell || source /etc/profile.d/modules-it.sh
+shopt -q login_shell || source /etc/profile.d/modules-it-sw.sh
 shopt -q login_shell || source /etc/profile.d/modules-ecrc.sh
 export MODULEPATH=$(echo $MODULEPATH|tr ':' '\n'|sort|uniq|tr '\n' ':')
 
@@ -132,7 +132,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 export LIBGL_ALWAYS_INDIRECT=1
-export MACHINES="albatross almaha bashiq buraq condor flamingo jasmine oqab raed shihab thana";
+export MACHINES="albatross almaha buraq condor flamingo jasmine raed shihab thana tuwaiq vulture";
 export PATH=$PATH:$HOME/shells:$HOME/devel/argbash-2.5.1/bin
 
 # Bash history
@@ -150,6 +150,7 @@ export EDITOR="emacs24-nox"
 alias gitka="gitk --all"
 alias vmake="make VERBOSE=1"
 alias fmake="make -j 20 -l 24"
+export MAKE='make -j 12 -l 14'
 alias bfg="java -jar ~/Downloads/bfg-1.12.16.jar"
 export LANGUAGE="en_GB.UTF-8"
 
@@ -162,13 +163,18 @@ function appearance {
 	fi
 }
 
+export SPACK_ROOT=$HOME/devel/spack
+alias spack-enable="source $SPACK_ROOT/share/spack/setup-env.sh"
 
 alias resetlang="export LC_ALL=C"
-
 alias rdocker="docker --tlsverify --tlscacert=/home/gonzalea/.docker/ca.docker-host.pem --tlscert=/home/gonzalea/.docker/cert.docker-host.pem --tlskey=/home/gonzalea/.docker/key.docker-host.pem   -H=docker-host:3389 "
 
 alias myindent="indent -linux -i4 -di16 -l100 -ip4 -hnl -nprs -npcs "
+alias myip='curl icanhazip.com'
 alias ssh-copy-id="ssh-copy-id  -i ~/.ssh/id_rsa.pub"
+alias module-stats="cat /var/log/apache2/ecrc-modules-stats.txt.1 /var/log/apache2/ecrc-modules-stats.txt  |sort | grep -v jenkins | cut -f1,2 | uniq -c | sort -h"
+
+
 # use runpath
 export LDFLAGS="$LDFLAGS -Wl,--enable-new-dtags"
 
